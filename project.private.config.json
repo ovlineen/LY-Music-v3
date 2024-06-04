@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "歌单排行页",
+          "pathName": "pages/detial-song/detail-song",
+          "query": "type=recommend",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "搜索内容页",
           "pathName": "pages/main-search/main-search",
           "query": "keyword=晴天",

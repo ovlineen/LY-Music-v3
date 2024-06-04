@@ -24,8 +24,8 @@
           </view>
         </view>
       </block>
-      <view class="more" bind:tap="onVideoMoreTouch">点我加载更多</view>
     </view>
+    <view class="more" bind:tap="onVideoMoreTouch">点我加载更多</view>
   </van-tab>
   <van-tab title="电台" name="1009"></van-tab>
 </van-tabs>

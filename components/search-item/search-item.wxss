@@ -1,9 +1,13 @@
 /* components/search-item/search-item.wxss */
 .searchka {
-  width: 100%;
-  height: 100vh;
+  position: fixed;
+  top: 100rpx;
+  right: 0;
+  left: 0;
+  bottom: 0;
   z-index: 2;
   padding: 20rpx;
+  box-sizing: border-box;
   background-color: #fafafa;
 }
 

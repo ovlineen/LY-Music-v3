@@ -29,8 +29,9 @@ page {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-.video-item .more {
+.more {
+  display: flex;
+  justify-content: center;
   height: 100rpx;
   line-height: 100rpx;
 }

@@ -1,0 +1,4 @@
+/* components/area-menu/area-menu.wxss */
+.songItem {
+  display: flex;
+}

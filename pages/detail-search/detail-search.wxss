@@ -17,3 +17,7 @@ page {
   margin: 5rpx;
   background-color: #fff;
 }
+
+.area-header {
+  padding: 0 20rpx !important;
+}

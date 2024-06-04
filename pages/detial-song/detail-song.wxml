@@ -1,0 +1,15 @@
+<!--pages/detial-song/detail-song.wxml-->
+<area-header title="{{title}}" isMore="{{false}}"></area-header>
+<view class="ranking">
+  <block wx:for="{{recommendData}}" wx:key="id">
+    <view class="item">
+      <view class="index">{{index + 1}}</view>
+      <view class="info">
+        <view class="name">{{item.name}}</view>
+        <block wx:for="{{item.ar}}" wx:key="id" wx:for-item="iten">
+          <text class="singerName">{{iten.name}}</text>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

@@ -21,7 +21,12 @@ function tiemConvert(time) {
   return padLeft(minute) + ":" + padLeft(second);
 }
 
+function nameSegmentation(name) {
+  return name;
+}
+
 module.exports = {
   playCount: playCount,
   tiemConvert: tiemConvert,
+  nameSegmentation: nameSegmentation,
 };

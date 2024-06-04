@@ -18,4 +18,12 @@ Page({
       hotSearchData: res.result.hots,
     });
   },
+
+  // 热门关键词触摸事件
+  onSearchHotTouch(e) {
+    const keyword = e._relatedInfo.anchorRelatedText.trim();
+    wx.navigateTo({
+      url: `/pages/main-search/main-search?keyword=${keyword}`,
+    });
+  },
 });

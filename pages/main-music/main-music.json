@@ -1,5 +1,10 @@
 {
+  "navigationBarTitleText": "音乐",
   "usingComponents": {
-    "van-search": "@vant/weapp/search/index"
+    "van-search": "@vant/weapp/search/index",
+    "area-header": "/components/area-header/area-header",
+    "recommend-item": "/components/recommend-item/recommend-item",
+    "area-menu": "/components/area-menu/area-menu",
+    "ranking-item": "/components/ranking-item/ranking-item"
   }
 }

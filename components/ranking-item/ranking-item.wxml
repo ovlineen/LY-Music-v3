@@ -1,0 +1,19 @@
+<!--components/ranking-item/ranking-item.wxml-->
+
+<view class="ranking">
+  <view class="song">
+    <view class="name">{{title}}</view>
+    <block wx:for="{{itemData}}" wx:key="index">
+      <view class="item">
+        <text class="index">{{index + 1 }}.</text>
+        <text class="name">{{item.name}}</text>
+        <block wx:for="{{item.ar}}" wx:key="id" wx:for-iten="iten">
+          <text class="index">{{iten.name}}</text>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class="cover">
+    <image class="pic" src="{{picURL}}" mode="widthFix" />
+  </view>
+</view>

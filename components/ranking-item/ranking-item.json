@@ -1,6 +1,6 @@
 {
+  "component": true,
   "usingComponents": {
-    "serach-item": "/components/search-item/search-item",
     "area-header": "/components/area-header/area-header"
   }
 }

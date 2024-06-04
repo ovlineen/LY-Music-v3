@@ -1,7 +1,35 @@
 <!--pages/main-music/main-music.wxml-->
-<van-search
-  shape="round"
-  background="#fff"
-  placeholder="请输入搜索关键词"
-  bind:tap="onSearchTouch"
-></van-search>
+<van-search shape="round" background="#fff" placeholder="请输入搜索关键词" bind:tap="onSearchTouch"></van-search>
+
+<swiper class="swiper" indicator-dots indicator-color="#ccc" indicator-active-color="#fff" autoplay>
+  <block wx:for="{{banners}}" wx:key="id">
+    <swiper-item class="swiper-item">
+      <image class="cover" src="{{item.pic}}" mode="widthFix" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="recommend">
+  <area-header title="热门推荐" bind:onHaederTouch="onRecommendMoreTouch"></area-header>
+  <block wx:for="{{recommendData}}" wx:key="id">
+    <recommend-item itemData="{{item}}"></recommend-item>
+  </block>
+</view>
+
+<view class="songList">
+  <area-header title="热门歌单"></area-header>
+  <area-menu menuData="{{hotPlaylistData}}"></area-menu>
+</view>
+
+<view class="songList">
+  <area-header title="华语流行"></area-header>
+  <area-menu menuData="{{MandarinPopData}}"></area-menu>
+</view>
+
+<view class="ranking">
+  <ranking-item title="飙升榜" itemData="{{soaringRankingDataTracks}}" picURL="{{soaringRankingData.coverImgUrl}}"></ranking-item>
+
+  <ranking-item title="原创榜" itemData="{{originalRankingDataTracks}}" picURL="{{originalRankingData.coverImgUrl}}"></ranking-item>
+
+  <ranking-item title="新歌榜" itemData="{{newSongRankingDataTracks}}" picURL="{{newSongRankingData.coverImgUrl}}"></ranking-item>
+</view>

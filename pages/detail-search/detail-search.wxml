@@ -1,7 +1,9 @@
 <!--pages/detail-search/detail-search.wxml-->
 <serach-item></serach-item>
+
+<area-header class="area-header" title="热门搜索" isMore="{{false}}"></area-header>
 <view class="searchHot">
   <block wx:for="{{hotSearchData}}" wx:key="id">
-    <view class="text">{{item.first}}</view>
+    <view class="text" bind:tap="onSearchHotTouch">{{item.first}}</view>
   </block>
 </view>

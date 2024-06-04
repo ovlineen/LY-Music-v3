@@ -1,0 +1,26 @@
+/* pages/detial-song/detail-song.wxss */
+page {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  margin: 30rpx 0;
+  align-items: center;
+}
+
+.item .index {
+  margin-right: 20rpx;
+}
+
+.item .name {
+  font-size: 36rpx;
+  margin-bottom: 5rpx;
+}
+
+.item .singerName {
+  font-size: 28rpx;
+  margin-right: 10rpx;
+  color: #999;
+}

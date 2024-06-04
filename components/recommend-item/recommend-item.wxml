@@ -1,0 +1,19 @@
+<!--components/recommend-item/recommend-item.wxml-->
+<wxs src="../../utils/format.wxs" module="fmt" />
+
+<view class="item">
+  <view class="cover">
+    <image class="pic" src="{{itemData.al.picUrl}}" mode="" />
+  </view>
+  <view class="info">
+    <view class="name">{{itemData.name}}</view>
+    <view class="singerName">
+      <block wx:for="{{itemData.ar}}" wx:key="id">
+        {{fmt.nameSegmentation(item.name)}}
+      </block>
+    </view>
+  </view>
+  <view class="more">
+    <van-icon name="arrow" />
+  </view>
+</view>
