@@ -61,6 +61,7 @@ Page({
     });
   },
 
+  // 视频更多触摸事件
   onVideoMoreTouch() {
     if (this.data.videoHasMore) {
       this.feachSearchKeyword();
@@ -68,7 +69,7 @@ Page({
       wx.showToast({
         title: "没有更多数据",
         icon: "error",
-        duration: "1500",
+        duration: 1500,
       });
     }
   },
