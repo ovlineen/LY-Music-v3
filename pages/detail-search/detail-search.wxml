@@ -1,0 +1,7 @@
+<!--pages/detail-search/detail-search.wxml-->
+<serach-item></serach-item>
+<view class="searchHot">
+  <block wx:for="{{hotSearchData}}" wx:key="id">
+    <view class="text">{{item.first}}</view>
+  </block>
+</view>

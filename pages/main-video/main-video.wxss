@@ -1,0 +1,10 @@
+/* pages/main-video/main-video.wxss */
+page {
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+.video-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -1,0 +1,13 @@
+<!--components/search-item/search-item.wxml-->
+<van-search value="{{searchValue}}" shape="round" background="#fff" placeholder="请输入搜索关键词" bind:change="onSearchChange" show-action></van-search>
+
+<view class="searchka" wx:if="{{searchValue}}">
+  <view class="title">搜索 “{{searchValue}}”</view>
+  <view class="keyword">
+    <block wx:for="{{associationData}}" wx:key="index">
+      <view class="text" bind:tap="onKeywordTouch">
+        {{item.keyword}}
+      </view>
+    </block>
+  </view>
+</view>

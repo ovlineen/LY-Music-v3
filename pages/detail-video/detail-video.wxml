@@ -1,0 +1,14 @@
+<!--pages/detail-video/detail-video.wxml-->
+<wxs src="../../utils/format.wxs" module="fmt"/>
+
+<view class="video">
+  <video class="mvVideo" autoplay src="{{mvURL}}" />
+  <view class="info">
+    <view class="name">{{mvDetailData.name}}</view>
+    <view class="artistName">{{mvDetailData.artistName}}</view>
+    <view class="more">
+      <text class="playCount">{{fmt.playCount(mvDetailData.playCount)}}</text>
+      <text class="publishTime"> - {{mvDetailData.publishTime}}</text>
+    </view>
+  </view>
+</view>

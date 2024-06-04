@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@vant/weapp": "^1.11.6",
+    "lodash": "^4.17.21"
+  }
+}

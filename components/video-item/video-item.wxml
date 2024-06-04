@@ -1,0 +1,18 @@
+<!--components/video-item/video-item.wxml-->
+<wxs src="../../utils/format.wxs" module="fmt" />
+
+<block wx:for="{{itemData}}" wx:key="id">
+  <view class="item" data-id="{{item.id}}" bind:tap="onVideoTouch">
+    <view class="cover">
+      <image class="coverPic" src="{{item.cover}}" mode="widthFix" />
+      <view class="more">
+        <view class="playCount">{{fmt.playCount(item.playCount)}}</view>
+        <view class="tiem">{{fmt.tiemConvert(item.mv.videos[0].duration)}}</view>
+      </view>
+    </view>
+    <view class="info">
+      <text class="name">{{item.name}}</text>
+      <text class="artistName"> - {{item.artistName}}</text>
+    </view>
+  </view>
+</block>

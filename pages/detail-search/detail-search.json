@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "serach-item": "/components/search-item/search-item"
+  }
+}

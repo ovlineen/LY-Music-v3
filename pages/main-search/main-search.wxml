@@ -1,0 +1,31 @@
+<!--pages/main-search/main-search.wxml-->
+<search-item></search-item>
+
+<van-tabs bind:click="onTabTouch">
+  <van-tab title="歌曲" name="1">
+    <block wx:for="{{songs}}" wx:key="id">
+      <view class="item">
+        {{item.name}}
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="歌单" name="1000">
+    <!-- 待开发 -->
+  </van-tab>
+  <van-tab title="视频" name="1014">
+    <view class="video-item">
+      <block wx:for="{{videos}}" wx:key="id">
+        <view class="item" data-id="{{item.vid}}" bind:tap="onVideoItemTouch">
+          <view class="cover">
+            <image class="coverPic" src="{{item.coverUrl}}" />
+          </view>
+          <view class="info">
+            <view class="title">{{item.title}}</view>
+          </view>
+        </view>
+      </block>
+      <view class="more" bind:tap="onVideoMoreTouch">点我加载更多</view>
+    </view>
+  </van-tab>
+  <van-tab title="电台" name="1009"></van-tab>
+</van-tabs>

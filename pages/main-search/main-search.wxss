@@ -1,0 +1,34 @@
+/* pages/main-search/main-search.wxss */
+page {
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+
+.video-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.video-item .item {
+  width: 47%;
+  padding: 0 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.video-item .item .cover .coverPic {
+  width: 100%;
+  height: 220rpx;
+}
+
+.video-item .item .info .title {
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.video-item .more {
+  height: 100rpx;
+  line-height: 100rpx;
+}
