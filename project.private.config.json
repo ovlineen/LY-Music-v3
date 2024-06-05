@@ -9,9 +9,9 @@
     "miniprogram": {
       "list": [
         {
-          "name": "歌单内容",
+          "name": "歌单详情页",
           "pathName": "pages/menu-item/menu-item",
-          "query": "id=9942919201",
+          "query": "id=9269335200",
           "launchMode": "default",
           "scene": null
         },

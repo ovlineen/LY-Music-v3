@@ -20,7 +20,7 @@ Page({
   async feachPlayList() {
     const res = await getPlayList(this.data.id);
     this.setData({
-      menuList: res.playlist,
+      menuList: res.playlist.tracks,
     });
   },
 

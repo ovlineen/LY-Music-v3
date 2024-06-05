@@ -1,6 +1,49 @@
 <!--pages/menu-item/menu-item.wxml-->
+<wxs src="../../utils/format.wxs" module="fmt" />
+
 <view class="menu-item">
-  <view class="cover">
-    <image class="pic" src="{{menuDatil.coverImgUrl}}" mode="scaleToFill" />
+  <image class="cover" src="{{menuDatil.backgroundCoverUrl}}" mode="" />
+  <view class="backgournd-box"></view>
+  <view class="info">
+    <view class="item">
+      <view class="itemCover">
+        <image class="pic" src="{{menuDatil.backgroundCoverUrl}}" mode="" />
+      </view>
+      <view class="creator">
+        <view class="name">{{menuDatil.name}}</view>
+        <view class="avatar">
+          <image class="pic" src="{{menuDatil.creator.avatarUrl}}" mode="" />
+          <text class="name">{{menuDatil.creator.nickname}}</text>
+        </view>
+        <view class="description">
+          {{menuDatil.description}}
+        </view>
+      </view>
+    </view>
+
+    <view class="more">
+      <view class="like">
+        <image src="../../assets/images/icons/favor_icon.png" mode="" />
+        <text class="text">{{fmt.playCount(menuDatil.playCount)}}</text>
+      </view>
+      <view class="share">
+        <image src="../../assets/images/icons/share_icon.png" mode="" />
+        <text class="textt">更多</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="song-list">
+    <block wx:for="{{menuList}}" wx:key="id">
+      <view class="item">
+        <view class="index">{{index +1 }}</view>
+        <view class="detail">
+          <view class="name">{{item.name}}</view>
+          <block wx:for="{{item.ar}}" wx:key="name" wx:for-item="iten">
+            <text class="nikname" decode>{{iten.name}}&nbsp;</text>
+          </block>
+        </view>
+      </view>
+    </block>
   </view>
 </view>
