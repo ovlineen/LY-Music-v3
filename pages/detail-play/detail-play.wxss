@@ -1,0 +1,107 @@
+/* pages/detail-play/detail-play.wxss */
+page {
+  color: #fff;
+}
+
+.background-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  z-index: -1;
+}
+
+.nav {
+  display: flex;
+  height: 44px;
+}
+
+.nav .content {
+  flex: 1;
+  color: #aaa;
+}
+
+.nav .left,
+.nav .right {
+  width: 120rpx;
+}
+
+.nav .left,
+.nav .right,
+.nav .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav .content .active {
+  color: #fff;
+}
+
+.swiper-item {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.swiper-item .cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.swiper-item .info .name {
+  font-size: 40rpx;
+  margin-bottom: 5rpx;
+}
+
+.swiper-item .info .singer {
+  font-size: 28rpx;
+}
+
+.swiper-item .lyric {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+
+.swiper-item .schedule {
+  margin-bottom: 20rpx;
+}
+
+.swiper-item .schedule .time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.swiper-item .controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10%;
+  align-items: center;
+}
+
+.swiper-item .controls image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.swiper-item .controls .pause {
+  width: 100rpx;
+  height: 100rpx;
+}

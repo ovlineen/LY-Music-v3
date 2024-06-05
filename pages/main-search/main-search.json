@@ -3,6 +3,7 @@
     "search-item": "/components/search-item/search-item",
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
-    "video-item": "/components/video-item/video-item"
+    "video-item": "/components/video-item/video-item",
+    "menu-item": "/components/menu-item/menu-item"
   }
 }

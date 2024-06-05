@@ -1,0 +1,50 @@
+<!--pages/detail-play/detail-play.wxml-->
+<view class="music-play">
+  <image class="background-cover" src="{{songData.al.picUrl}}" mode="scaleToFill" />
+  <view class="background"></view>
+
+  <view class="nav-bar">
+    <view class="status" style="height: {{statusHeight}}px;"></view>
+    <view class="nav">
+      <view class="left">返回</view>
+      <view class="content">
+        <text class="item {{currentPage === 0 ? 'active' : '' }}">歌曲 </text>
+        <text decode>&nbsp;|&nbsp;</text>
+        <text class="item {{currentPage === 1 ? 'active' : '' }}"> 歌词</text>
+      </view>
+      <view class="right"></view>
+    </view>
+  </view>
+
+  <swiper bindchange="onSwiperChange" style="height: {{currentHeight}}px;">
+    <swiper-item class="swiper-item">
+      <view class="cover">
+        <image src="{{songData.al.picUrl}}" mode="widthFix" />
+      </view>
+      <view class="info">
+        <view class="name">{{songData.name}}</view>
+        <view class="singer">
+          <block wx:for="{{songData.ar}}" wx:key="id">
+            {{item.name}}
+          </block>
+        </view>
+      </view>
+      <view class="lyric">一句歌词</view>
+      <view class="schedule">
+        <slider block-size="12" />
+        <view class="time">
+          <view class="start">00:00</view>
+          <view class="finish">03:00</view>
+        </view>
+      </view>
+      <view class="controls">
+        <image class="order" src="../../assets/images/player/play_order.png" mode="widthFix" />
+        <image class="prev" src="../../assets/images/player/play_prev.png" mode="widthFix" />
+        <image class="pause" src="../../assets/images/player/play_pause.png" mode="widthFix" />
+        <image class="next" src="../../assets/images/player/play_next.png" mode="widthFix" />
+        <image class="music" src="../../assets/images/player/play_music.png" mode="widthFix" />
+      </view>
+    </swiper-item>
+    <swiper-item>歌词</swiper-item>
+  </swiper>
+</view>

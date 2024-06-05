@@ -6,6 +6,8 @@ Page({
     active: 0,
     songs: [],
     videos: [],
+    menuData: [],
+    djRadiosData: [],
     videosOffest: "",
     videoHasMore: true,
     type: "1",
@@ -29,8 +31,11 @@ Page({
       this.setData({
         songs: res.result.songs,
       });
+      this.isSong = false;
     } else if (this.data.type == 1000) {
-      console.log(res);
+      this.setData({
+        menuData: res.result.playlists,
+      });
     } else if (this.data.type == 1014) {
       const res = await getSearchKeyword(
         this.data.keyword,
@@ -43,6 +48,10 @@ Page({
       this.setData({ videos: newVideos });
       this.data.videosOffest = this.data.videos.length;
       this.data.videoHasMore = res.result.hasMore;
+    } else if (this.data.type == 1009) {
+      this.setData({
+        djRadiosData: res.result.djRadios,
+      });
     }
   },
 
@@ -72,5 +81,13 @@ Page({
         duration: 1500,
       });
     }
+  },
+
+  // 歌单更多事件
+  onMenuTouch(e) {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/menu-item/menu-item?id=${id}`,
+    });
   },
 });

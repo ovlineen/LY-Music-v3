@@ -1,5 +1,5 @@
 <!--components/menu-item/menu-item.wxml-->
-<view class="item">
+<view class="item menu-class" bind:tap="onMenuItemTouch">
   <image class="cover" src="{{itemData.coverImgUrl}}" mode="widthFix" />
   <view class="name">{{itemData.name}}</view>
 </view>

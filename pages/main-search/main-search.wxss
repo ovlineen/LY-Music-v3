@@ -35,3 +35,15 @@ page {
   height: 100rpx;
   line-height: 100rpx;
 }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.menu-item image {
+  margin-right: 20rpx;
+  width: 150rpx;
+  height: 150rpx;
+}

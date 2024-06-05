@@ -18,5 +18,13 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {},
+  methods: {
+    onMenuItemTouch() {
+      const id = this.properties.itemData.id;
+      wx.navigateTo({
+        url: `/pages/menu-item/menu-item?id=${id}`,
+      });
+    },
+  },
+  externalClasses: ["menu-class"],
 });

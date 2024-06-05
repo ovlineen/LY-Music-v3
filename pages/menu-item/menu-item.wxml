@@ -2,17 +2,17 @@
 <wxs src="../../utils/format.wxs" module="fmt" />
 
 <view class="menu-item">
-  <image class="cover" src="{{menuDatil.backgroundCoverUrl}}" mode="" />
+  <image class="cover" src="{{menuList.coverImgUrl}}" mode="" />
   <view class="backgournd-box"></view>
   <view class="info">
     <view class="item">
       <view class="itemCover">
-        <image class="pic" src="{{menuDatil.backgroundCoverUrl}}" mode="" />
+        <image class="pic" src="{{menuList.coverImgUrl}}" mode="" />
       </view>
       <view class="creator">
         <view class="name">{{menuDatil.name}}</view>
         <view class="avatar">
-          <image class="pic" src="{{menuDatil.creator.avatarUrl}}" mode="" />
+          <image class="pic" src="{{menuList.creator.avatarUrl}}" mode="" />
           <text class="name">{{menuDatil.creator.nickname}}</text>
         </view>
         <view class="description">
@@ -34,7 +34,7 @@
   </view>
 
   <view class="song-list">
-    <block wx:for="{{menuList}}" wx:key="id">
+    <block wx:for="{{menuList.tracks}}" wx:key="id">
       <view class="item">
         <view class="index">{{index +1 }}</view>
         <view class="detail">

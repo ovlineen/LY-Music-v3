@@ -18,5 +18,12 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {},
+  methods: {
+    onRecommendItemTouch() {
+      const id = this.properties.itemData.id;
+      wx.navigateTo({
+        url: `/pages/detail-play/detail-play?id=${id}`,
+      });
+    },
+  },
 });

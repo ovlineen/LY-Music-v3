@@ -26,4 +26,11 @@ Page({
       });
     });
   },
+
+  onMenuItemTouch(e) {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/menu-item/menu-item?id=${id}`,
+    });
+  },
 });

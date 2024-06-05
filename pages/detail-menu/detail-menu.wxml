@@ -4,7 +4,7 @@
     <view class="title">{{item.cat}}</view>
     <view class="menu">
       <block wx:for="{{item.playlists}}" wx:key="id" wx:for-item="iten">
-        <view class="item">
+        <view class="item" bind:tap="onMenuItemTouch" data-id="{{iten.id}}">
           <view class="cover">
             <image class="pic" src="{{iten.coverImgUrl}}" />
           </view>

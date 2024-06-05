@@ -10,7 +10,9 @@
     </block>
   </van-tab>
   <van-tab title="歌单" name="1000">
-    <!-- 待开发 -->
+    <block wx:for="{{menuData}}" wx:key="id">
+      <menu-item menu-class="menu-item" itemData="{{item}}" bind:tap="onMenuTouch" data-id="{{item.id}}"></menu-item>
+    </block>
   </van-tab>
   <van-tab title="视频" name="1014">
     <view class="video-item">
@@ -27,5 +29,7 @@
     </view>
     <view class="more" bind:tap="onVideoMoreTouch">点我加载更多</view>
   </van-tab>
-  <van-tab title="电台" name="1009"></van-tab>
+  <van-tab title="电台" name="1009">
+    <view>太懒了不写了</view>
+  </van-tab>
 </van-tabs>

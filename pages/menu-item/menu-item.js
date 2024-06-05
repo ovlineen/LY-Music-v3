@@ -9,6 +9,7 @@ Page({
 
   onLoad(options) {
     const id = options.id;
+    console.log(id);
     this.setData({
       id,
     });
@@ -20,7 +21,7 @@ Page({
   async feachPlayList() {
     const res = await getPlayList(this.data.id);
     this.setData({
-      menuList: res.playlist.tracks,
+      menuList: res.playlist,
     });
   },
 
