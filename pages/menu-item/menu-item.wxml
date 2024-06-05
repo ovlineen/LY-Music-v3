@@ -1,0 +1,6 @@
+<!--pages/menu-item/menu-item.wxml-->
+<view class="menu-item">
+  <view class="cover">
+    <image class="pic" src="{{menuDatil.coverImgUrl}}" mode="scaleToFill" />
+  </view>
+</view>

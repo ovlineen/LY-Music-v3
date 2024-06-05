@@ -43,8 +43,8 @@ Page({
     const hotRes = await getSonglist();
     const MandarinRes = await getSonglist("华语");
     this.setData({
-      hotPlaylistData: hotRes.playlists,
-      MandarinPopData: MandarinRes.playlists,
+      hotPlaylistData: hotRes,
+      MandarinPopData: MandarinRes,
     });
   },
 
@@ -91,6 +91,32 @@ Page({
   onRecommendMoreTouch() {
     wx.navigateTo({
       url: `/pages/detial-song/detail-song?type=recommend`,
+    });
+  },
+
+  // 热门歌单数据
+  onSonglistMoreTouch() {
+    wx.navigateTo({
+      url: "/pages/detail-menu/detail-menu",
+    });
+  },
+
+  // 排行榜触摸
+  onRankingSoarTouch() {
+    wx.navigateTo({
+      url: "/pages/detial-song/detail-song?type=ranking&key=soaringRanking",
+    });
+  },
+
+  onRankingOrigTouch() {
+    wx.navigateTo({
+      url: "/pages/detial-song/detail-song?type=ranking&key=originalRanking",
+    });
+  },
+
+  onRankingNewTouch() {
+    wx.navigateTo({
+      url: "/pages/detial-song/detail-song?type=ranking&key=newSongRanking",
     });
   },
 });

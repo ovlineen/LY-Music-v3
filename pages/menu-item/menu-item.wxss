@@ -1,0 +1,10 @@
+/* pages/menu-item/menu-item.wxss */
+.cover {
+  width: 100%;
+  height: 495rpx;
+}
+
+.cover .pic {
+  width: 100%;
+  height: 100%;
+}

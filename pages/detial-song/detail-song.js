@@ -1,15 +1,26 @@
 // pages/detial-song/detail-song.js
 import recomendStore from "../../stores/recommendStore";
+import rankingSotre from "../../stores/rankingSotre";
+import rankingStore from "../../stores/rankingSotre";
 Page({
   data: {
     title: "热歌榜",
-    recommendData: [],
+    sonListData: [],
   },
 
   onLoad(options) {
     const type = options.type;
+    const key = options.key;
     if (type == "recommend") {
       recomendStore.onState("recommendData", this.handleRecommend);
+    } else {
+      if (key == "soaringRanking") {
+        rankingSotre.onState("soaringRankingData", this.handlesoaringRanking);
+      } else if (key == "originalRanking") {
+        rankingStore.onState("originalRankingData", this.handleoriginalRanking);
+      } else if (key == "newSongRanking") {
+        rankingStore.onState("newSongRankingData", this.handlenewSongRanking);
+      }
     }
 
     wx.setNavigationBarTitle({
@@ -19,7 +30,33 @@ Page({
 
   handleRecommend(value) {
     this.setData({
-      recommendData: value,
+      sonListData: value,
     });
+  },
+
+  handlesoaringRanking(value) {
+    if (value && value.tracks) {
+      this.setData({
+        title: value.name,
+        sonListData: value.tracks,
+      });
+    }
+  },
+
+  handleoriginalRanking(value) {
+    if (value && value.tracks) {
+      this.setData({
+        title: value.name,
+        sonListData: value.tracks,
+      });
+    }
+  },
+  handlenewSongRanking(value) {
+    if (value && value.tracks) {
+      this.setData({
+        title: value.name,
+        sonListData: value.tracks,
+      });
+    }
   },
 });

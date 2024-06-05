@@ -1,7 +1,7 @@
 <!--pages/detial-song/detail-song.wxml-->
 <area-header title="{{title}}" isMore="{{false}}"></area-header>
 <view class="ranking">
-  <block wx:for="{{recommendData}}" wx:key="id">
+  <block wx:for="{{sonListData}}" wx:key="id">
     <view class="item">
       <view class="index">{{index + 1}}</view>
       <view class="info">

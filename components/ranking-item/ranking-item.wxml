@@ -5,11 +5,13 @@
     <view class="name">{{title}}</view>
     <block wx:for="{{itemData}}" wx:key="index">
       <view class="item">
-        <text class="index">{{index + 1 }}.</text>
-        <text class="name">{{item.name}}</text>
-        <block wx:for="{{item.ar}}" wx:key="id" wx:for-iten="iten">
-          <text class="index">{{iten.name}}</text>
-        </block>
+        <view class="index">{{index + 1 }}.</view>
+        <view class="name">{{item.name}}</view>
+        <view class="singerName">
+          <block wx:for="{{item.ar}}" wx:key="id" wx:for-item="iten">
+            {{iten.name}}<text decode='true'>&nbsp;</text>
+          </block>
+        </view>
       </view>
     </block>
   </view>

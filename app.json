@@ -5,7 +5,9 @@
     "pages/detail-video/detail-video",
     "pages/detail-search/detail-search",
     "pages/main-search/main-search",
-    "pages/detial-song/detail-song"
+    "pages/detial-song/detail-song",
+    "pages/detail-menu/detail-menu",
+    "pages/menu-item/menu-item"
   ],
   "window": {
     "navigationBarTextStyle": "black",

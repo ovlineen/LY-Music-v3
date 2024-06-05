@@ -28,3 +28,18 @@ export function getSonglist(cat = "流行", limit = 6, offset = 0) {
     },
   });
 }
+
+export function getMenuSort() {
+  return lyrequest.get({
+    url: "/playlist/hot",
+  });
+}
+
+export function getMenuDetail(id) {
+  return lyrequest.get({
+    url: "/playlist/detail",
+    data: {
+      id,
+    },
+  });
+}

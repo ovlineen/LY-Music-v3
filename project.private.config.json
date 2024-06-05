@@ -9,6 +9,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "歌单内容",
+          "pathName": "pages/menu-item/menu-item",
+          "query": "id=9942919201",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "歌单详情页",
+          "pathName": "pages/detail-menu/detail-menu",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "歌单排行页",
           "pathName": "pages/detial-song/detail-song",
           "query": "type=recommend",

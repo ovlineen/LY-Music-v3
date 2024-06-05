@@ -2,7 +2,7 @@
 <scroll-view scroll-x enable-flex style="flex-direction: row;">
   <view class="songItem">
     <block wx:for="{{menuData}}" wx:key="id">
-      <menu-item itemData="{{item}}"></menu-item>
+      <menu-item bind:tap="onMenuItemTouch" data-id="{{item.id}}" itemData="{{item}}"></menu-item>
     </block>
   </view>
 </scroll-view>

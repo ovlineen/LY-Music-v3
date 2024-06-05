@@ -17,19 +17,18 @@
 </view>
 
 <view class="songList">
-  <area-header title="热门歌单"></area-header>
-  <area-menu menuData="{{hotPlaylistData}}"></area-menu>
+  <area-header title="{{hotPlaylistData.cat}}歌单" bind:onHaederTouch="onSonglistMoreTouch"></area-header>
+  <area-menu menuData="{{hotPlaylistData.playlists}}"></area-menu>
 </view>
 
 <view class="songList">
-  <area-header title="华语流行"></area-header>
-  <area-menu menuData="{{MandarinPopData}}"></area-menu>
+  <area-header title="{{MandarinPopData.cat}}流行" bind:onHaederTouch="onSonglistMoreTouch"></area-header>
+  <area-menu menuData="{{MandarinPopData.playlists}}"></area-menu>
 </view>
 
+<area-header title="排行榜" isMore="{{false}}"></area-header>
 <view class="ranking">
-  <ranking-item title="飙升榜" itemData="{{soaringRankingDataTracks}}" picURL="{{soaringRankingData.coverImgUrl}}"></ranking-item>
-
-  <ranking-item title="原创榜" itemData="{{originalRankingDataTracks}}" picURL="{{originalRankingData.coverImgUrl}}"></ranking-item>
-
-  <ranking-item title="新歌榜" itemData="{{newSongRankingDataTracks}}" picURL="{{newSongRankingData.coverImgUrl}}"></ranking-item>
+  <ranking-item title="飙升榜" bind:tap="onRankingSoarTouch" itemData="{{soaringRankingDataTracks}}" picURL="{{soaringRankingData.coverImgUrl}}"></ranking-item>
+  <ranking-item title="原创榜" bind:tap="onRankingOrigTouch" itemData="{{originalRankingDataTracks}}" picURL="{{originalRankingData.coverImgUrl}}"></ranking-item>
+  <ranking-item title="新歌榜" bind:tap="onRankingNewTouch" itemData="{{newSongRankingDataTracks}}" picURL="{{newSongRankingData.coverImgUrl}}"></ranking-item>
 </view>
