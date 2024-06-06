@@ -1,4 +1,5 @@
 <!--components/ranking-item/ranking-item.wxml-->
+<wxs src="../../utils/format.wxs" module="fmt" />
 
 <view class="ranking">
   <view class="song">
@@ -17,5 +18,6 @@
   </view>
   <view class="cover">
     <image class="pic" src="{{picURL}}" mode="widthFix" />
+    <view class="playCount">{{fmt.playCount(playCount)}}</view>
   </view>
 </view>

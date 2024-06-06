@@ -1,4 +1,6 @@
 <!--pages/detail-play/detail-play.wxml-->
+<wxs src="../../utils/format.wxs" module="fmt" />
+
 <view class="music-play">
   <image class="background-cover" src="{{songData.al.picUrl}}" mode="scaleToFill" />
   <view class="background"></view>
@@ -6,17 +8,19 @@
   <view class="nav-bar">
     <view class="status" style="height: {{statusHeight}}px;"></view>
     <view class="nav">
-      <view class="left">返回</view>
+      <view class="left" bind:tap="onBacktrackTouch">
+        <van-icon name="arrow-left" />
+      </view>
       <view class="content">
-        <text class="item {{currentPage === 0 ? 'active' : '' }}">歌曲 </text>
+        <text bind:tap="onTabTitle" data-index="{{0}}" class="item {{currentPage === 0 ? 'active' : '' }}">歌曲</text>
         <text decode>&nbsp;|&nbsp;</text>
-        <text class="item {{currentPage === 1 ? 'active' : '' }}"> 歌词</text>
+        <text bind:tap="onTabTitle" data-index="{{1}}" class="item {{currentPage === 1 ? 'active' : '' }}">歌词</text>
       </view>
       <view class="right"></view>
     </view>
   </view>
 
-  <swiper bindchange="onSwiperChange" style="height: {{currentHeight}}px;">
+  <swiper bindchange="onSwiperChange" current="{{currentPage}}" style="height: {{currentHeight}}px;">
     <swiper-item class="swiper-item">
       <view class="cover">
         <image src="{{songData.al.picUrl}}" mode="widthFix" />
@@ -29,22 +33,30 @@
           </block>
         </view>
       </view>
-      <view class="lyric">一句歌词</view>
+      <view class="lyric">{{currentLyricText}}</view>
       <view class="schedule">
-        <slider block-size="12" />
+        <slider block-size="12" value="{{sliderValue}}" bindchange="onSliderTouch" />
         <view class="time">
-          <view class="start">00:00</view>
-          <view class="finish">03:00</view>
+          <view class="start">{{fmt.tiemConvert(currentTime)}}</view>
+          <view class="finish">{{fmt.tiemConvert(durationTime)}}</view>
         </view>
       </view>
       <view class="controls">
         <image class="order" src="../../assets/images/player/play_order.png" mode="widthFix" />
         <image class="prev" src="../../assets/images/player/play_prev.png" mode="widthFix" />
-        <image class="pause" src="../../assets/images/player/play_pause.png" mode="widthFix" />
+        <image class="pause" bind:tap="onPlayOrPauseTap" src="../../assets/images/player/play_{{isPlaying ? 'pause' : 'resume'}}.png" mode="widthFix" />
         <image class="next" src="../../assets/images/player/play_next.png" mode="widthFix" />
         <image class="music" src="../../assets/images/player/play_music.png" mode="widthFix" />
       </view>
     </swiper-item>
-    <swiper-item>歌词</swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y scroll-with-animation class="lyric-list" scroll-top="{{lyricScrollTop}}">
+        <block wx:for="{{lyricInfos}}" wx:key="time">
+          <view class="text {{currentLyricIndex === index ? 'active' : ''}}" style="padding-top: {{index === 0 ? '80%' : 0}}; padding-bottom: {{index === lyricInfos.length - 1 ? 100 : 0}}px;">
+            {{item.text}}
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
   </swiper>
 </view>

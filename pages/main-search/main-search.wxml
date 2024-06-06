@@ -3,11 +3,13 @@
 
 <van-tabs bind:click="onTabTouch">
   <van-tab title="歌曲" name="1">
-    <block wx:for="{{songs}}" wx:key="id">
-      <view class="item">
-        {{item.name}}
-      </view>
-    </block>
+    <view class="songs">
+      <block wx:for="{{songs}}" wx:key="id">
+        <view class="item" data-id="{{item.id}}" bind:tap="onSongTouch">
+          <view class="name">{{item.name}}</view>
+        </view>
+      </block>
+    </view>
   </van-tab>
   <van-tab title="歌单" name="1000">
     <block wx:for="{{menuData}}" wx:key="id">
@@ -30,6 +32,13 @@
     <view class="more" bind:tap="onVideoMoreTouch">点我加载更多</view>
   </van-tab>
   <van-tab title="电台" name="1009">
-    <view>太懒了不写了</view>
+    <view class="radio">
+      <block wx:for="{{djRadiosData}}" wx:key="id">
+        <view class="item">
+          <image class="cover" src="{{item.intervenePicUrl}}" mode="" />
+          <view class="name">{{item.name}}</view>
+        </view>
+      </block>
+    </view>
   </van-tab>
 </van-tabs>

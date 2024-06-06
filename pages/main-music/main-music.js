@@ -1,7 +1,12 @@
 // pages/main-music/main-music.js
-import { getBannerCarousel, getSonglist } from "../../services/music";
+import {
+  getBannerCarousel,
+  getSonglist
+} from "../../services/music";
 import recommendStore from "../../stores/recommendStore";
 import rankingStore from "../../stores/rankingSotre";
+import playStore from '../../stores/playStore'
+
 Page({
   data: {
     banners: [],
@@ -119,4 +124,9 @@ Page({
       url: "/pages/detial-song/detail-song?type=ranking&key=newSongRanking",
     });
   },
+
+  // 首页歌曲点击事件
+  onRecommendItemTouch() {
+    playStore.setState("playListSongs", this.data.recommendData)
+  }
 });

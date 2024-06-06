@@ -2,6 +2,8 @@
 import recomendStore from "../../stores/recommendStore";
 import rankingSotre from "../../stores/rankingSotre";
 import rankingStore from "../../stores/rankingSotre";
+import playStore from '../../stores/playStore'
+
 Page({
   data: {
     title: "热歌榜",
@@ -59,4 +61,16 @@ Page({
       });
     }
   },
+
+
+  // 歌曲点击事件
+  songListItemTouch(e) {
+    const id = e.currentTarget.dataset.id
+
+    wx.navigateTo({
+      url: `/pages/detail-play/detail-play?id=${id}`,
+    })
+
+    playStore.setState('playListSongs', this.data.sonListData)
+  }
 });

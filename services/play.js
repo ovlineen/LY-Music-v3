@@ -8,3 +8,12 @@ export function getSongDetail(ids) {
     },
   });
 }
+
+export function getLyricsData(id) {
+  return lyrequest.get({
+    url: "/lyric",
+    data: {
+      id,
+    },
+  });
+}

@@ -16,6 +16,11 @@ Component({
       type: String,
       value: "",
     },
+
+    playCount: {
+      type: String,
+      value: "",
+    },
   },
 
   /**

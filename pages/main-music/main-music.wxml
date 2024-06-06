@@ -12,7 +12,7 @@
 <view class="recommend">
   <area-header title="热门推荐" bind:onHaederTouch="onRecommendMoreTouch"></area-header>
   <block wx:for="{{recommendData}}" wx:key="id">
-    <recommend-item itemData="{{item}}"></recommend-item>
+    <recommend-item itemData="{{item}}" bind:tap="onRecommendItemTouch"></recommend-item>
   </block>
 </view>
 
@@ -28,7 +28,7 @@
 
 <area-header title="排行榜" isMore="{{false}}"></area-header>
 <view class="ranking">
-  <ranking-item title="飙升榜" bind:tap="onRankingSoarTouch" itemData="{{soaringRankingDataTracks}}" picURL="{{soaringRankingData.coverImgUrl}}"></ranking-item>
-  <ranking-item title="原创榜" bind:tap="onRankingOrigTouch" itemData="{{originalRankingDataTracks}}" picURL="{{originalRankingData.coverImgUrl}}"></ranking-item>
-  <ranking-item title="新歌榜" bind:tap="onRankingNewTouch" itemData="{{newSongRankingDataTracks}}" picURL="{{newSongRankingData.coverImgUrl}}"></ranking-item>
+  <ranking-item title="飙升榜" bind:tap="onRankingSoarTouch" itemData="{{soaringRankingDataTracks}}" picURL="{{soaringRankingData.coverImgUrl}}" playCount="{{soaringRankingData.playCount}}"></ranking-item>
+  <ranking-item title="原创榜" bind:tap="onRankingOrigTouch" itemData="{{originalRankingDataTracks}}" picURL="{{originalRankingData.coverImgUrl}}" playCount="{{originalRankingData.playCount}}"></ranking-item>
+  <ranking-item title="新歌榜" bind:tap="onRankingNewTouch" itemData="{{newSongRankingDataTracks}}" picURL="{{newSongRankingData.coverImgUrl}}" playCount="{{newSongRankingData.playCount}}"></ranking-item>
 </view>

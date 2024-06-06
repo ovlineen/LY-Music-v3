@@ -35,7 +35,7 @@
 
   <view class="song-list">
     <block wx:for="{{menuList.tracks}}" wx:key="id">
-      <view class="item">
+      <view class="item" data-id="{{item.id}}" bind:tap="onSongsTouch">
         <view class="index">{{index +1 }}</view>
         <view class="detail">
           <view class="name">{{item.name}}</view>

@@ -1,5 +1,11 @@
 <!--components/menu-item/menu-item.wxml-->
+<wxs src="../../utils/format.wxs" module="fmt" />
 <view class="item menu-class" bind:tap="onMenuItemTouch">
-  <image class="cover" src="{{itemData.coverImgUrl}}" mode="widthFix" />
-  <view class="name">{{itemData.name}}</view>
+  <view class="menu-item">
+    <image class="cover" src="{{itemData.coverImgUrl}}" mode="widthFix" />
+    <view class="playCount">
+      {{fmt.playCount(itemData.playCount)}}
+    </view>
+  </view>
+  <view class="menu-name">{{itemData.name}}</view>
 </view>

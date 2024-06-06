@@ -63,7 +63,6 @@ page {
   align-items: center;
   height: 60%;
 }
-
 .swiper-item .info .name {
   font-size: 40rpx;
   margin-bottom: 5rpx;
@@ -104,4 +103,20 @@ page {
 .swiper-item .controls .pause {
   width: 100rpx;
   height: 100rpx;
+}
+
+.lyric-list {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.lyric-list .text {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #ccc;
+}
+
+.lyric-list .active {
+  color: #fff;
 }

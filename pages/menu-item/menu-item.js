@@ -1,5 +1,11 @@
 // pages/menu-item/menu-item.js
-import { getPlayList, getMenuDetail } from "../../services/music";
+import {
+  getPlayList,
+  getMenuDetail
+} from "../../services/music";
+
+import palyStore from '../../stores/playStore'
+
 Page({
   data: {
     id: 0,
@@ -9,7 +15,6 @@ Page({
 
   onLoad(options) {
     const id = options.id;
-    console.log(id);
     this.setData({
       id,
     });
@@ -30,5 +35,14 @@ Page({
     this.setData({
       menuDatil: res.playlist,
     });
+  },
+
+  onSongsTouch(e) {
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/detail-play/detail-play?id=${id}`,
+    });
+
+    palyStore.setState('playListSongs', this.data.menuList.tracks)
   },
 });

@@ -32,7 +32,7 @@
 
 .more {
   position: absolute;
-  right: 0;
+  right: 2%;
   top: 50%;
-  transform: translateX(-50%);
+  transform: translateY(-50%);
 }

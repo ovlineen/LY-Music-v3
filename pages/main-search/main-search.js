@@ -90,4 +90,12 @@ Page({
       url: `/pages/menu-item/menu-item?id=${id}`,
     });
   },
+
+  // 歌曲触摸事件
+  onSongTouch(e) {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/detail-play/detail-play?id=${id}`,
+    });
+  },
 });

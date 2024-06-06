@@ -3,14 +3,26 @@
   margin-right: 20rpx;
 }
 
-.cover {
+.menu-item {
+  position: relative;
+}
+
+.menu-item .playCount {
+  position: absolute;
+  bottom: 15rpx;
+  right: 10rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.menu-item .cover {
   width: 250rpx;
   height: 250rpx;
   border-radius: 20rpx;
   overflow: hidden;
 }
 
-.name {
+.menu-name {
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
