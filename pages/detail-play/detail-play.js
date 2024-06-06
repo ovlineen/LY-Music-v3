@@ -31,6 +31,8 @@ Page({
     currentLyricText: "",
     currentLyricIndex: 0,
     lyricScrollTop: 0,
+    playListSongs: [],
+    playSongIndex: 0
   },
 
   onLoad(options) {
@@ -75,7 +77,7 @@ Page({
     this.feachLyricsData();
 
     // 侦听状态管理器数据
-    playStore.onState("playListSongs", this.headelPlayListSongs)
+    playStore.onStates(["playListSongs", "playSongIndex"], this.getPlaySongInfoHandler)
   },
 
   async feachSongDetail() {
@@ -151,8 +153,41 @@ Page({
     });
   },
 
+  // 切换歌曲
+  onPrevBtnTap() {
+    console.log(1212);
+  },
+  onNextBtnTap() {
+    const length = this.data.playListSongs.length
+    let index = this.data.playSongIndex
+    index = index + 1
+    console.log(index);
+    // 边界判断 
+    if (index == length) index = 0
+
+    // 根据索引获取信息
+    const newSong = this.data.playListSongs[index]
+    console.log(newSong.id);
+
+    //将最新索引写入状态管理中
+    playStore.setState("playSongIndex", index)
+  },
+
   // 将状态管理器数据写入当前 Data 中
-  headelPlayListSongs(value) {
-    console.log(value);
+  getPlaySongInfoHandler(value) {
+    const {
+      playListSongs,
+      playSongIndex
+    } = value
+    if (value.playListSongs) {
+      this.setData({
+        playListSongs
+      })
+    }
+    if (value.playSongIndex) {
+      this.setData({
+        playSongIndex
+      })
+    }
   }
 });

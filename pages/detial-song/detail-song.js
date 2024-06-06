@@ -72,5 +72,6 @@ Page({
     })
 
     playStore.setState('playListSongs', this.data.sonListData)
+    playStore.setState('playSongIndex', e.currentTarget.dataset.index)
   }
 });

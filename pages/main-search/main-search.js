@@ -1,5 +1,8 @@
 // pages/main-search/main-search.js
-import { getSearchKeyword } from "../../services/search";
+import {
+  getSearchKeyword
+} from "../../services/search";
+import playStore from "../../stores/playStore";
 Page({
   data: {
     keyword: "",
@@ -45,7 +48,9 @@ Page({
       );
 
       const newVideos = [...this.data.videos, ...res.result.videos];
-      this.setData({ videos: newVideos });
+      this.setData({
+        videos: newVideos
+      });
       this.data.videosOffest = this.data.videos.length;
       this.data.videoHasMore = res.result.hasMore;
     } else if (this.data.type == 1009) {
@@ -58,7 +63,9 @@ Page({
   // tab 标签事件
   onTabTouch(e) {
     const type = e.detail.name;
-    this.setData({ type });
+    this.setData({
+      type
+    });
     this.feachSearchKeyword();
   },
 
@@ -94,8 +101,12 @@ Page({
   // 歌曲触摸事件
   onSongTouch(e) {
     const id = e.currentTarget.dataset.id;
+
     wx.navigateTo({
       url: `/pages/detail-play/detail-play?id=${id}`,
     });
+
+    playStore.setState("playListSongs", this.data.songs)
+    playStore.setState("playSongIndex", e.currentTarget.dataset.index)
   },
 });

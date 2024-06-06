@@ -43,9 +43,9 @@
       </view>
       <view class="controls">
         <image class="order" src="../../assets/images/player/play_order.png" mode="widthFix" />
-        <image class="prev" src="../../assets/images/player/play_prev.png" mode="widthFix" />
+        <image class="prev" bind:tap="onPrevBtnTap" src="../../assets/images/player/play_prev.png" mode="widthFix" />
         <image class="pause" bind:tap="onPlayOrPauseTap" src="../../assets/images/player/play_{{isPlaying ? 'pause' : 'resume'}}.png" mode="widthFix" />
-        <image class="next" src="../../assets/images/player/play_next.png" mode="widthFix" />
+        <image class="next" bind:tap="onNextBtnTap" src="../../assets/images/player/play_next.png" mode="widthFix" />
         <image class="music" src="../../assets/images/player/play_music.png" mode="widthFix" />
       </view>
     </swiper-item>

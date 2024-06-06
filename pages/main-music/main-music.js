@@ -126,7 +126,8 @@ Page({
   },
 
   // 首页歌曲点击事件
-  onRecommendItemTouch() {
+  onRecommendItemTouch(e) {
     playStore.setState("playListSongs", this.data.recommendData)
+    playStore.setState("playSongIndex", e.currentTarget.dataset.index)
   }
 });

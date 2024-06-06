@@ -2,7 +2,7 @@
 <area-header title="{{title}}" isMore="{{false}}"></area-header>
 <view class="ranking">
   <block wx:for="{{sonListData}}" wx:key="id">
-    <view class="item" data-id="{{item.id}}" bind:tap="songListItemTouch">
+    <view class="item" data-id="{{item.id}}" data-index="{{index}}" bind:tap="songListItemTouch">
       <view class="index">{{index + 1}}</view>
       <view class="info">
         <view class="name">{{item.name}}</view>

@@ -5,7 +5,7 @@
   <van-tab title="歌曲" name="1">
     <view class="songs">
       <block wx:for="{{songs}}" wx:key="id">
-        <view class="item" data-id="{{item.id}}" bind:tap="onSongTouch">
+        <view class="item" data-id="{{item.id}}" data-index="{{index}}" bind:tap="onSongTouch">
           <view class="name">{{item.name}}</view>
         </view>
       </block>

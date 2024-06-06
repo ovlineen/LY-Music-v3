@@ -3,6 +3,7 @@ import {
   getPlayList,
   getMenuDetail
 } from "../../services/music";
+import playStore from "../../stores/playStore";
 
 import palyStore from '../../stores/playStore'
 
@@ -44,5 +45,6 @@ Page({
     });
 
     palyStore.setState('playListSongs', this.data.menuList.tracks)
+    playStore.setState("playSongIndex", e.currentTarget.dataset.index)
   },
 });

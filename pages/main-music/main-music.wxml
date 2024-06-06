@@ -12,7 +12,7 @@
 <view class="recommend">
   <area-header title="热门推荐" bind:onHaederTouch="onRecommendMoreTouch"></area-header>
   <block wx:for="{{recommendData}}" wx:key="id">
-    <recommend-item itemData="{{item}}" bind:tap="onRecommendItemTouch"></recommend-item>
+    <recommend-item itemData="{{item}}" data-index="{{index}}" bind:tap="onRecommendItemTouch"></recommend-item>
   </block>
 </view>
 
